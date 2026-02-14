@@ -42,7 +42,9 @@ if (Test-Path $TempDir) {
 }
 
 Write-Host "↓ Downloading Claude SEO..." -ForegroundColor Yellow
-git clone --depth 1 $RepoUrl $TempDir 2>$null
+git clone --depth 1 $RepoUrl $TempDir 2>&1 | Out-Null
+if ($LASTEXITCODE -ne 0) { throw "git clone failed with exit code $LASTEXITCODE" }
+
 
 # Copy skill files
 Write-Host "→ Installing skill files..." -ForegroundColor Yellow
