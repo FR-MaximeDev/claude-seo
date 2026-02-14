@@ -41,7 +41,7 @@ if (Test-Path $TempDir) {
     Remove-Item -Recurse -Force $TempDir
 }
 
-Write-Host "↓ Downloading Claude SEO..." -ForegroundColor Yellow
+Write-Host "↓ Downloading Claude SEO test..." -ForegroundColor Yellow
 
 $oldEap = $ErrorActionPreference
 $ErrorActionPreference = "Continue"
